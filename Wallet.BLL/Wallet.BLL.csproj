@@ -9,8 +9,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="DTO\" />
+    <None Remove="AutoMapper" />
+    <None Remove="BusinessModels\" />
+    <None Remove="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
+    <Folder Include="BusinessModels\" />
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
   </ItemGroup>
 </Project>
