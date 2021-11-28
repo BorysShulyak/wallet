@@ -6,13 +6,13 @@ using Wallet.DAL.Entities;
 using Wallet.DAL.EF;
 using Wallet.DAL.Interfaces;
 
-namespace NLayerApp.DAL.Repositories
+namespace Wallet.DAL.Repositories
 {
-    public class OrderRepository : IRepository<Transaction>
+    public class TransactionRepository : IRepository<Transaction>
     {
         private WalletContext db;
 
-        public OrderRepository(WalletContext context)
+        public TransactionRepository(WalletContext context)
         {
             this.db = context;
         }

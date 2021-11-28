@@ -9,7 +9,6 @@ namespace Wallet.DAL.EF
     {
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Currency> Currencies { get; set; }
 
         static WalletContext()
         {
@@ -25,8 +24,6 @@ namespace Wallet.DAL.EF
     {
         protected override void Seed(WalletContext db)
         {
-            db.Currencies.Add(new Currency { Name = "USD" });
-            db.Currencies.Add(new Currency { Name = "UAH" });
 
             db.Accounts.Add(new Account { Money = 1000 });
             db.Accounts.Add(new Account { Money = 1000 });

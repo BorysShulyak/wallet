@@ -7,7 +7,6 @@ namespace Wallet.DAL.Interfaces
     {
         IRepository<Account> Accounts { get; }
         IRepository<Transaction> Transactions { get; }
-        IRepository<Currency> Currencies { get; }
 
         void Save();
     }
