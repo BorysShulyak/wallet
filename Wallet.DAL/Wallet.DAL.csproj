@@ -6,8 +6,14 @@
 
   <ItemGroup>
     <None Remove="Entities\" />
+    <None Remove="EntityFramework" />
+    <None Remove="EF\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
+    <Folder Include="EF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
   </ItemGroup>
 </Project>
