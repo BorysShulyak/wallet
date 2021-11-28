@@ -4,4 +4,19 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Wallet.BLL\Wallet.BLL.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AutoMapper" />
+    <None Remove="EntityFramework" />
+    <None Remove="Ninject.MVC5" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Ninject.MVC5" Version="3.3.0" />
+  </ItemGroup>
 </Project>
