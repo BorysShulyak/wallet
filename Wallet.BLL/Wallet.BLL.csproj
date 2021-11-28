@@ -12,11 +12,15 @@
     <None Remove="AutoMapper" />
     <None Remove="BusinessModels\" />
     <None Remove="Infrastructure\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
     <Folder Include="BusinessModels\" />
     <Folder Include="Infrastructure\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
