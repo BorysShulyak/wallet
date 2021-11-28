@@ -9,11 +9,13 @@
     <None Remove="EntityFramework" />
     <None Remove="EF\" />
     <None Remove="Interfaces\" />
+    <None Remove="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="EF\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
