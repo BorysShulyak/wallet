@@ -5,31 +5,32 @@ using Microsoft.AspNetCore.Mvc;
 using Wallet.BLL.DTO;
 using Wallet.BLL.Interfaces;
 
+
 namespace Wallet.WEB.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [Produces("application/json")]
-    public class WalletController: ControllerBase
+    public class AccountController: ControllerBase
     {
         ITransactionService transactionService;
 
-        public WalletController(ITransactionService serv)
+        public AccountController(ITransactionService serv)
         {
             transactionService = serv;
         }
 
         [HttpGet]
-        public IActionResult GetTransactions()
+        public IActionResult GetAcouunts()
         {
-            var transactions = transactionService.GetTransactions();
-            return Ok(transactions);
+            var accounts = transactionService.GetAccounts();
+            return Ok(accounts);
         }
 
-        [HttpPut]
-        public IActionResult MakeTransaktion(TransactionDTO transactionDto)
+        [HttpPost]
+        public IActionResult MakeAccount(AccountDTO accountDTO)
         {
-            transactionService.MakeTransaction(transactionDto);
+            transactionService.MakeAccount(accountDTO);
             return Ok();
         }
     }

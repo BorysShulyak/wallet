@@ -48,6 +48,33 @@ namespace Wallet.BLL.Services
             Database.Save();
         }
 
+        public IEnumerable<TransactionDTO> GetTransactions()
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Transaction, TransactionDTO>()).CreateMapper();
+            return mapper.Map<IEnumerable<Transaction>, List<TransactionDTO>>(Database.Transactions.GetAll());
+        }
+
+        public void MakeAccount(AccountDTO accountDTO)
+        {
+            Account account = Database.Accounts.Get(accountDTO.Id);
+
+            // validation
+            if (account != null)
+                throw new ValidationException("Account has already exists", "");
+
+
+            Account newAccount = new Account
+            {
+                Id = accountDTO.Id,
+                Money = accountDTO.Money
+            };
+
+
+            Database.Accounts.Create(newAccount);
+            Database.Save();
+        }
+
+
         public IEnumerable<AccountDTO> GetAccounts()
         {
             // применяем автомаппер для проекции одной коллекции на другую
