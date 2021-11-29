@@ -34,12 +34,16 @@ namespace Wallet.BLL.Services
 
             Transaction transaction = new Transaction
             {
-                //SourceAccountId = sourceAccount.Id,
-                //TargetAccountId = targetAccount.Id,
+                SourceAccountId = sourceAccount.Id,
+                TargetAccountId = targetAccount.Id,
                 MoneySum = sum,
                 Description = transactionDto.Description,
                 Date = DateTime.Now,
             };
+
+            sourceAccount.Money -= sum;
+            targetAccount.Money += sum;
+
             Database.Transactions.Create(transaction);
             Database.Save();
         }
