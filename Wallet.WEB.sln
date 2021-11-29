@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers.Tests", "Controllers.Tests\Controllers.Tests.csproj", "{060496D3-B471-4E42-9066-9DBA0ABC3132}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{1724E1E3-3B0F-4E16-B4EF-1AB5BAFD190A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1724E1E3-3B0F-4E16-B4EF-1AB5BAFD190A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1724E1E3-3B0F-4E16-B4EF-1AB5BAFD190A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060496D3-B471-4E42-9066-9DBA0ABC3132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060496D3-B471-4E42-9066-9DBA0ABC3132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060496D3-B471-4E42-9066-9DBA0ABC3132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060496D3-B471-4E42-9066-9DBA0ABC3132}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
