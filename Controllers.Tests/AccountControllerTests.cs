@@ -14,7 +14,7 @@ namespace Controllers.Tests
     public class AccountControllerTests
     {
         [Fact]
-        public void GetAcouuntsOkObjectResultWithListOfAccounts()
+        public void GetAcouuntsReturnsOkObjectResultWithListOfAccounts()
         {
             // Arrange
             var mock = new Mock<ITransactionService>();
@@ -40,5 +40,37 @@ namespace Controllers.Tests
             };
             return accounts;
         }
+
+        [Fact]
+        public void MakeAcouuntsReturnsOkObjectResultIfCorrectDataWasProvided()
+        {
+            // Arrange
+            var mock = new Mock<ITransactionService>();
+            AccountDTO mockAccountDto = new AccountDTO { Id = 3, Money = 100 };
+            mock.Setup(repo => repo.MakeAccount(mockAccountDto));
+            var controller = new AccountController(mock.Object);
+
+            // Act
+            var result = controller.MakeAccount(mockAccountDto);
+
+            // Assert
+            Assert.IsType<OkResult>(result);
+        }
+
+        //[Fact]
+        //public void MakeAcouuntsReturnsBadRequestIfIncorrectDataWasProvided()
+        //{
+        //    // Arrange
+        //    var mock = new Mock<ITransactionService>();
+        //    AccountDTO mockAccountDto = new AccountDTO { Id = 1, Money = 100 };
+        //    mock.Setup(repo => repo.MakeAccount(mockAccountDto)).Throws(new Exception(""));
+        //    var controller = new AccountController(mock.Object);
+
+        //    // Act
+        //    var result = controller.MakeAccount(mockAccountDto);
+
+        //    // Assert
+        //    Assert.IsType<BadRequestResult>(result);
+        //}
     }
 }
