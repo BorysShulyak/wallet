@@ -9,7 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Wallet.BLL.Interfaces;
+using Wallet.BLL.Services;
 using Wallet.DAL.EF;
+using Wallet.DAL.Interfaces;
+using Wallet.DAL.Repositories;
 
 namespace Wallet.WEB
 {
@@ -26,7 +30,9 @@ namespace Wallet.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<WalletContext>(o => { o.UseSqlite("Filename=WalletDatabase.db"); });
+            services.AddDbContext<WalletContext>(/*o => { o.UseSqlite("Filename=WalletDatabase.db"); }*/);
+            services.AddTransient<IUnitOfWork, EFUnitOfWork>();
+            services.AddTransient<ITransactionService, TransactionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
