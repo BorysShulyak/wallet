@@ -28,6 +28,31 @@ namespace Wallet.WEB.Controllers
             return View(accounts);
         }
 
+        public ActionResult MakeAccount()
+        {
+            return View("MakeAccount");
+        }
+
+        [HttpPost]
+        public ActionResult MakeAccount(AccountViewModel account)
+        {
+            try
+            {
+                var accountDTO = new AccountDTO
+                {
+                    Id = account.Id,
+                    Money = account.Money
+                };
+                transactionService.MakeAccount(accountDTO);
+                return Content("<h2>Your account was successfuly added</h2>");
+            }
+            catch (ValidationException ex)
+            {
+                ModelState.AddModelError(ex.Property, ex.Message);
+            }
+            return View(account);
+        }
+
         public ActionResult MakeTransaction(decimal moneySum, int? sourceId, int? tragetId)
         {
             try
@@ -47,6 +72,8 @@ namespace Wallet.WEB.Controllers
                 return Content(ex.Message);
             }
         }
+
+
         [HttpPost]
         public ActionResult MakeTransaction(TransactionViewModel transaction)
         {
