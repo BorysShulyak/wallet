@@ -4,7 +4,7 @@ using System.Linq;
 using Wallet.DAL.Entities;
 using Wallet.DAL.EF;
 using Wallet.DAL.Interfaces;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Wallet.DAL.Repositories
 {

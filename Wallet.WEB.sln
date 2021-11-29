@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.DAL", "Wallet.DAL\Wa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.BLL", "Wallet.BLL\Wallet.BLL.csproj", "{1724E1E3-3B0F-4E16-B4EF-1AB5BAFD190A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{557141E3-B4AB-4096-8959-0A397CDBB5FE}"
+	ProjectSection(SolutionItems) = preProject
+		entrypoint.sh = entrypoint.sh
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

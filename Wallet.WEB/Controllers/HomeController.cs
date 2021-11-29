@@ -48,7 +48,7 @@ namespace Wallet.WEB.Controllers
             }
         }
         [HttpPost]
-        public ActionResult MakeOrder(TransactionViewModel transaction)
+        public ActionResult MakeTransaction(TransactionViewModel transaction)
         {
             try
             {

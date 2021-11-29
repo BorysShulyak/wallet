@@ -6,6 +6,6 @@ namespace Wallet.DAL.Entities
         public int Id { get; set; }
         public decimal Money { get; set; }
 
-        public ICollection<Transaction> Transactions { get; set; }
+        //public ICollection<Transaction> Transactions { get; set; }
     }
 }

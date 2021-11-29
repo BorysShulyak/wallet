@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using Wallet.DAL.Entities;
 using Wallet.DAL.EF;
 using Wallet.DAL.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Wallet.DAL.Repositories
 {
@@ -19,7 +19,8 @@ namespace Wallet.DAL.Repositories
 
         public IEnumerable<Transaction> GetAll()
         {
-            return db.Transactions.Include(o => o.SourceAccount);
+            return null;
+            //return db.Transactions.Include(o => o.SourceAccount);
         }
 
         public Transaction Get(int id)
@@ -38,7 +39,8 @@ namespace Wallet.DAL.Repositories
         }
         public IEnumerable<Transaction> Find(Func<Transaction, Boolean> predicate)
         {
-            return db.Transactions.Include(o => o.SourceAccount).Where(predicate).ToList();
+            return null;
+            //return db.Transactions.Include(o => o.SourceAccount).Where(predicate).ToList();
         }
         public void Delete(int id)
         {

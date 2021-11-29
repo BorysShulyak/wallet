@@ -11,10 +11,11 @@ namespace Wallet.DAL.Repositories
         private AccountRepository accountRepository;
         private TransactionRepository transactionRepository;
 
-        public EFUnitOfWork(string connectionString)
+        public EFUnitOfWork(WalletContext db)
         {
-            db = new WalletContext(connectionString);
+            this.db = db;
         }
+
         public IRepository<Account> Accounts
         {
             get

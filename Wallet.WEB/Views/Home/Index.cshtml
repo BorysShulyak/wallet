@@ -1,8 +1,35 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Wallet.WEB.Models.AccountViewModel>
+
+@{
+    ViewBag.Title = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Money)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => item.Id)
+            </td>
+            <td>
+                @Html.DisplayNameFor(modelItem => item.Money)
+            </td>
+            <td>
+                @Html.ActionLink("Transaction", "MakeTransaction", new { moneySum = 100,  })
+            </td>
+        </tr>
+    }
+
+</table>
