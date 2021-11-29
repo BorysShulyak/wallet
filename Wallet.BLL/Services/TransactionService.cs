@@ -51,7 +51,8 @@ namespace Wallet.BLL.Services
         public IEnumerable<TransactionDTO> GetTransactions()
         {
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Transaction, TransactionDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<Transaction>, List<TransactionDTO>>(Database.Transactions.GetAll());
+            var transactions = Database.Transactions.GetAll();
+            return mapper.Map<IEnumerable<Transaction>, List<TransactionDTO>>(transactions);
         }
 
         public void MakeAccount(AccountDTO accountDTO)

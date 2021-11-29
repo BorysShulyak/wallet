@@ -19,8 +19,7 @@ namespace Wallet.DAL.Repositories
 
         public IEnumerable<Transaction> GetAll()
         {
-            return null;
-            //return db.Transactions.Include(o => o.SourceAccount);
+            return db.Transactions;
         }
 
         public Transaction Get(int id)
