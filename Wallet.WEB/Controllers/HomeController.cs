@@ -53,24 +53,9 @@ namespace Wallet.WEB.Controllers
             return View(account);
         }
 
-        public ActionResult MakeTransaction(decimal moneySum, int? sourceId, int? tragetId)
+        public ActionResult MakeTransaction()
         {
-            try
-            {
-                AccountDTO sourceAccount = transactionService.GetSourceAccount(sourceId);
-                AccountDTO targetAccount = transactionService.GetTargetAccount(tragetId);
-                var transaction = new TransactionViewModel {
-                    SourceAccountId = sourceAccount.Id,
-                    TargetAccountId = targetAccount.Id,
-                    MoneySum = moneySum
-                };
-
-                return View(transaction);
-            }
-            catch (ValidationException ex)
-            {
-                return Content(ex.Message);
-            }
+            return View("MakeTransaction");
         }
 
 
@@ -93,6 +78,7 @@ namespace Wallet.WEB.Controllers
             }
             return View(transaction);
         }
+
         protected override void Dispose(bool disposing)
         {
             transactionService.Dispose();
