@@ -36,7 +36,9 @@ namespace Wallet.DAL.Repositories
         {
             Account existingAccount = db.Accounts.Find(account.Id);
             if (existingAccount != null)
-                db.Accounts.Update(account);
+            {
+                existingAccount.Money = account.Money;
+            }
         }
 
         public IEnumerable<Account> Find(Func<Account, Boolean> predicate)

@@ -57,6 +57,22 @@ namespace Controllers.Tests
             Assert.IsType<OkResult>(result);
         }
 
+        [Fact]
+        public void DeleteAccountReturnsOkObjectResultIfCorrectDataWasProvided()
+        {
+            // Arrange
+            var mock = new Mock<ITransactionService>();
+            int mockedAccountId = 10;
+            mock.Setup(repo => repo.DeleteAccount(mockedAccountId));
+            var controller = new AccountController(mock.Object);
+
+            // Act
+            var result = controller.DeleteAccount(mockedAccountId);
+
+            // Assert
+            Assert.IsType<OkResult>(result);
+        }
+
         //[Fact]
         //public void MakeAcouuntsReturnsBadRequestIfIncorrectDataWasProvided()
         //{
