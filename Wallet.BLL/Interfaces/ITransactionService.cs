@@ -9,6 +9,8 @@ namespace Wallet.BLL.Interfaces
         IEnumerable<TransactionDTO> GetTransactions();
 
         void MakeAccount(AccountDTO accountDTO);
+        void UpdateAccount(AccountDTO accountDTO);
+        void DeleteAccount(int id);
         AccountDTO GetSourceAccount(int? id);
         AccountDTO GetTargetAccount(int? id);
         IEnumerable<AccountDTO> GetAccounts();

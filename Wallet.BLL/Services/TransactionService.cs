@@ -75,6 +75,38 @@ namespace Wallet.BLL.Services
             Database.Save();
         }
 
+        public void UpdateAccount(AccountDTO accountDTO)
+        {
+            Account account = Database.Accounts.Get(accountDTO.Id);
+
+            // validation
+            if (account == null)
+                throw new ValidationException("Account was not found", "");
+
+
+            Account newAccount = new Account
+            {
+                Id = accountDTO.Id,
+                Money = accountDTO.Money
+            };
+
+
+            Database.Accounts.Update(newAccount);
+            Database.Save();
+        }
+
+        public void DeleteAccount(int id)
+        {
+            Account account = Database.Accounts.Get(id);
+
+            // validation
+            if (account == null)
+                throw new ValidationException("Account was not found", "");
+
+            Database.Accounts.Delete(id);
+            Database.Save();
+        }
+
 
         public IEnumerable<AccountDTO> GetAccounts()
         {

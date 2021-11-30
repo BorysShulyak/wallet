@@ -34,7 +34,9 @@ namespace Wallet.DAL.Repositories
 
         public void Update(Account account)
         {
-            db.Entry(account).State = EntityState.Modified;
+            Account existingAccount = db.Accounts.Find(account.Id);
+            if (existingAccount != null)
+                db.Accounts.Update(account);
         }
 
         public IEnumerable<Account> Find(Func<Account, Boolean> predicate)

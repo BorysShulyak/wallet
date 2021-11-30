@@ -41,5 +41,34 @@ namespace Wallet.WEB.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPut]
+        public IActionResult UpdateAccount(AccountDTO accountDTO)
+        {
+            try
+            {
+                transactionService.UpdateAccount(accountDTO);
+                return Ok();
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("delete")]
+        public IActionResult DeleteAccount(int id)
+        {
+            try
+            {
+                transactionService.DeleteAccount(id);
+                return Ok();
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }
